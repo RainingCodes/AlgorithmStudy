@@ -1,3 +1,4 @@
+package Baekjoon;
 import java.util.*;
 
 class Student implements Comparable<Student>{
