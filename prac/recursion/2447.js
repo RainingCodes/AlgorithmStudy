@@ -3,3 +3,8 @@ const filePath = process.platform === 'linux' ? '/dev/stdin' : 'input.txt';
 let input = fs.readFileSync(filePath).toString();
 input = +input;
 
+solution(input)
+function solution(N){
+   
+}
+
