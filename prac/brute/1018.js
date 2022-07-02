@@ -33,7 +33,8 @@ function solution(board, x, y){
   let blackCheck = 0;
   let whiteCheck =0;
 
-  //(board, 0, 5) 라면 가로 5 .. 12까지, 세로 0 .. 7까지 색깔 비교
+  //(board, 0, 5) 라면 가로 5 .. 12까지, 세로 0 .. 7까지 (board[0..7][5..12]) 
+  // blackFirst 보드판과 whiteFirst 보드판과 색깔 비교, 틀릴 때마다 색칠해야 할 개수 증가
   for(let i = 0; i < 8; i++){
     for(let j = 0; j < 8; j++){
       if(board[i + x][j + y] != blackFirst[i][j]){ blackCheck++; } //BWBWBWBW .. 하나씩 비교
