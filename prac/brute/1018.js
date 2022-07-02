@@ -5,6 +5,7 @@ let input = fs.readFileSync(filePath).toString().split('\n');
 // 올바른 색깔로 칠해진 체스판 입력된 보드판과 색깔 비교하기 위해
 const blackFirst = ['BWBWBWBW', 'WBWBWBWB', 'BWBWBWBW', 'WBWBWBWB', 'BWBWBWBW', 'WBWBWBWB', 'BWBWBWBW', 'WBWBWBWB'];
 const whiteFirst = ['WBWBWBWB', 'BWBWBWBW', 'WBWBWBWB', 'BWBWBWBW', 'WBWBWBWB', 'BWBWBWBW', 'WBWBWBWB', 'BWBWBWBW'];
+
 //shift()
 let NM = input.shift().split(' ');
 let N = +(NM.shift());
@@ -28,20 +29,21 @@ for(let i = 0; i <= N - 8; i++){
 console.log(String(Math.min(...min))); // 가장 작은 min 값 구하기
 
 function solution(board, x, y){
-  let black = 0;
-  let white =0;
+
+  let blackCheck = 0;
+  let whiteCheck =0;
 
   //(board, 0, 5) 라면 가로 5 .. 12까지, 세로 0 .. 7까지 색깔 비교
   for(let i = 0; i < 8; i++){
     for(let j = 0; j < 8; j++){
-      if(board[i + x][j + y] != blackFirst[i][j]){ black++; } //BWBWBWBW .. 하나씩 비교
-      if(board[i + x][j + y] != whiteFirst[i][j]){ white++; } //WBWBWBWB ..
+      if(board[i + x][j + y] != blackFirst[i][j]){ blackCheck++; } //BWBWBWBW .. 하나씩 비교
+      if(board[i + x][j + y] != whiteFirst[i][j]){ whiteCheck++; } //WBWBWBWB ..
     }
   }
 
-  if(black < white){
-    min.push(black);
+  if(blackCheck < whiteCheck){
+    min.push(blackCheck);
   }else{
-    min.push(white);
+    min.push(whiteCheck);
   }
 }
