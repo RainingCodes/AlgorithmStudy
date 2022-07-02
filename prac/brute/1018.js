@@ -10,7 +10,6 @@ const whiteFirst = ['WBWBWBWB', 'BWBWBWBW', 'WBWBWBWB', 'BWBWBWBW', 'WBWBWBWB', 
 let NM = input.shift().split(' ');
 let N = +(NM.shift());
 let M = +(NM.shift());
-
 let min = [];
 
 //board 값 생성
